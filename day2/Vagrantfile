@@ -1,0 +1,36 @@
+Vagrant.configure("2") do |config|
+    config.vm.box = "bento/ubuntu-22.04"
+
+    config.vm.boot_timeout = 1000
+    
+    
+    # Nginx VM - Web Server / Reverse Proxy
+    config.vm.define "nginx" do |nginx|
+      nginx.vm.hostname = "nginx"
+      nginx.vm.network "private_network", ip: "192.168.56.2"
+      nginx.vm.network "forwarded_port", guest: 80, host: 80
+      nginx.vm.provision "shell", path: "nginx.sh"
+    end
+    
+    # Tomcat VM - Application Server
+    config.vm.define "tomcat" do |tomcat|
+      tomcat.vm.hostname = "tomcat"
+      tomcat.vm.network "private_network", ip: "192.168.56.3"
+      tomcat.vm.provision "shell", path: "tomcat.sh"
+    end
+    
+    # RabbitMQ VM - Message Queue
+    config.vm.define "rmq" do |rmq|
+      rmq.vm.hostname = "rmq"
+      rmq.vm.network "private_network", ip: "192.168.56.4"
+      rmq.vm.provision "shell", path: "rabbitmq.sh"
+    end
+    
+        
+    # MariaDB VM - Database Server
+    config.vm.define "db" do |db|
+      db.vm.hostname = "db"
+      db.vm.network "private_network", ip: "192.168.56.5"
+      db.vm.provision "shell", path: "mariadb.sh"
+    end
+  end
