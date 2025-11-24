@@ -20,13 +20,13 @@ A complete multi-tier web application stack deployed using Vagrant and VirtualBo
 
 ## 🎯 Overview
 
-VProfile is a production-ready multi-tier web application that demonstrates modern DevOps practices and infrastructure automation. The project uses Vagrant to provision a complete application stack with separate VMs for each service layer.
+VProfile is a production-ready multi-tier web application that demonstrates modern DevOps practices and infrastructure automation. The project uses Vagrant to simulate provisioning a complete on-premise application stack with separate VMs for each service layer.
 
 ### Key Features
 
-✅ **Automated Infrastructure** - Complete VM provisioning with Vagrant  
+✅ **Automated Infrastructure** - Complete VM provisioning with Vagrant
+✅ **Automated Configuration** - Complete Shell Script for each VM  
 ✅ **Multi-Tier Architecture** - Separated concerns across 4 VMs  
-✅ **Service Discovery** - Configured hostname resolution  
 ✅ **Reverse Proxy** - Nginx for load balancing and routing  
 ✅ **Message Queue** - RabbitMQ for async processing  
 ✅ **Database Layer** - MariaDB with pre-populated data  
@@ -35,32 +35,7 @@ VProfile is a production-ready multi-tier web application that demonstrates mode
 
 ## 🏗️ Architecture
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                        Client Browser                        │
-└──────────────────────────┬──────────────────────────────────┘
-                           │ HTTP (Port 80)
-                           ▼
-┌─────────────────────────────────────────────────────────────┐
-│  NGINX (192.168.56.2)                                        │
-│  - Reverse Proxy                                             │
-│  - Load Balancer                                             │
-└──────────────────────────┬──────────────────────────────────┘
-                           │ Proxy Pass
-                           ▼
-┌─────────────────────────────────────────────────────────────┐
-│  TOMCAT (192.168.56.3)                                       │
-│  - Java Application Server                                   │
-│  - VProfile App (vprofile-v2)                               │
-└─────────────┬────────────────────────────┬──────────────────┘
-              │                            │
-              ▼                            ▼
-┌─────────────────────────┐  ┌─────────────────────────────────┐
-│ RabbitMQ (192.168.56.4) │  │ MariaDB (192.168.56.5)          │
-│ - Message Queue         │  │ - Database Server               │
-│ - Management UI         │  │ - Accounts DB                   │
-└─────────────────────────┘  └─────────────────────────────────┘
-```
+![alt text](file:///home/mohamed/Pictures/Screenshots/Screenshot%20from%202025-11-24%2017-48-38.png)
 
 ---
 
