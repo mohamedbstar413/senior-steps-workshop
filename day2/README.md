@@ -4,20 +4,6 @@ A complete multi-tier web application stack deployed using Vagrant and VirtualBo
 
 ---
 
-## 📋 Table of Contents
-
-- [Overview](#overview)
-- [Architecture](#architecture)
-- [Prerequisites](#prerequisites)
-- [Quick Start](#quick-start)
-- [Project Structure](#project-structure)
-- [Services & Configuration](#services--configuration)
-- [Access Information](#access-information)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-
----
-
 ## 🎯 Overview
 
 VProfile is a production-ready multi-tier web application that demonstrates modern DevOps practices and infrastructure automation. The project uses Vagrant to simulate provisioning a complete on-premise application stack with separate VMs for each service layer.
