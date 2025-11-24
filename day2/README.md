@@ -34,8 +34,7 @@ VProfile is a production-ready multi-tier web application that demonstrates mode
 ---
 
 ## 🏗️ Architecture
-
-![alt text](file:///home/mohamed/Pictures/Screenshots/Screenshot%20from%202025-11-24%2017-48-38.png)
+<img width="581" height="591" alt="Screenshot from 2025-11-24 17-48-38" src="https://github.com/user-attachments/assets/b03d8824-6c3a-4252-be81-85f73619fed0" />
 
 ---
 
